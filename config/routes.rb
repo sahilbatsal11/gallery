@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         collection do
           get "/", action: :list
         end
+        resources :photos
       end
 
       root 'albums#list', as: :authenticated_root

@@ -1,1 +1,19 @@
-<%= render(partial: "form", locals: {album: @album, editable: false}) %>
+<%# <%= render(partial: "form", locals: {album: @album, editable: false}) %>
+
+<p>
+  <strong>name:</strong>
+  <%= @album.name %>
+</p>
+
+<p>
+  <strong>description:</strong>
+  <%= @album.description%>
+</p>
+<br>
+
+<%=link_to "Show Photos", album_photos_path(@album), class: "btn btn-primary" %>
+
+<ul>
+  <li><%=link_to "Edit", edit_album_path(@album) %></li>
+  <li><%=link_to "Back", albums_path(@album) %></li>
+</ul>

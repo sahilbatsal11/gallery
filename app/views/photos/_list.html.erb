@@ -1,0 +1,5 @@
+<% photos.each do |photo| %>
+  <div class="col-3">
+    <%= image_tag photo.image.url, alt: photo.name, class: "img-fluid", title: photo.name %>
+  </div>
+<% end %>

@@ -1,0 +1,30 @@
+<%
+  is_editable = (defined?(editable) ? editable : true)
+%>
+
+<%= form_for photo, url: album_photos_path(album, photo) do |f| %>
+  <% if f.object.errors.any? %>
+    <%#= f.object.errors.details.inspect %>
+    <ul>
+      <% f.object.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <div class="mb-3">
+    <%= f.label :name, "Name Of Photo", class: "form-label" %>
+    <%= f.text_field :name, class: "form-control", readonly: !is_editable %>
+    <% if is_editable %>
+      <div id="album_name" class="form-text">Enter the unique name for your Photo.</div>
+    <% end %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :image, "Photo", class: "form-label" %>
+    <%= f.file_field :image, class: "form-control", readonly: !is_editable %>
+  </div>
+  <% if is_editable %>
+    <div class="mb-3">
+      <%= f.submit "Upload", class: "btn btn-primary float-end" %>
+    </div>
+  <% end %>
+<% end %>

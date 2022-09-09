@@ -6,5 +6,6 @@ class Album < ApplicationRecord
 
   # Associations
   belongs_to :user
+  has_many :photos
   # /Associations
 end
