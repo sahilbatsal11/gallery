@@ -1,0 +1,18 @@
+<%# <%= render(partial: "form", locals: {album: @album, editable: false}) %>
+
+<p>
+  <strong>name:</strong>
+  <%= @photo.name %>
+</p>
+
+<p>
+  <strong>Single Image:</strong>
+  <%= image_tag @photo.image.url, alt: @photo.name, class: "img-fluid", title: @photo.name %>
+</p>
+
+<p>
+  <strong>Multiple Image:</strong>
+  <% @photo.images.each do |image| %>
+    <%= image_tag image.url, alt: @photo.name, class: "img-fluid", title: @photo.name %>
+  <% end %>
+</p>

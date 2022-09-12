@@ -20,7 +20,11 @@
   </div>
   <div class="mb-3">
     <%= f.label :image, "Photo", class: "form-label" %>
-    <%= f.file_field :image, class: "form-control", readonly: !is_editable %>
+    <%= f.file_field :image, class: "form-control", readonly: !is_editable, accept: "image/*" %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :image, "Photos", class: "form-label" %>
+    <%= f.file_field :images, class: "form-control", readonly: !is_editable, multiple: true, accept: "image/*" %>
   </div>
   <% if is_editable %>
     <div class="mb-3">
