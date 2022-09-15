@@ -8,4 +8,8 @@ class Album < ApplicationRecord
   belongs_to :user
   has_many :photos
   # /Associations
+
+  # Scopes
+  default_scope ->{ order(created_at: :desc) }
+  # /Scopes
 end

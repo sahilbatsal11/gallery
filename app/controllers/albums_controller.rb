@@ -8,15 +8,24 @@ class AlbumsController < ApplicationController
 
   def new
     @album = current_user.albums.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
     @album = current_user.albums.new(album_params)
-
     if @album.save
-      redirect_to @album, notice: "Created Successfully"
+      respond_to do |format|
+        format.html { redirect_to @album, notice: "Created Successfully" }
+        format.js
+      end
     else
-      render :new , alert: "Failed to create"
+      respond_to do |format|
+        format.html { render :new , alert: "Failed to create" }
+        format.js
+      end
     end
   end
 

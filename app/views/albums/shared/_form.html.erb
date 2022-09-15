@@ -1,8 +1,9 @@
 <%
   is_editable = (defined?(editable) ? editable : true)
+  is_js_request = (defined?(js_request) ? js_request : false)
 %>
 
-<%= form_for album do |f| %>
+<%= form_for album, remote: is_js_request do |f| %>
   <% if f.object.errors.any? %>
     <%#= f.object.errors.details.inspect %>
     <ul>

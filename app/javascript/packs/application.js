@@ -17,9 +17,9 @@ Rails.start()
 ActiveStorage.start()
 // import "bootstrap"
 require("bootstrap")
-document.addEventListener("ready", function() {
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-        $('[data-toggle="popover"]').popover()
-    })
-})
+// document.addEventListener("ready", function() {
+//     $(function () {
+//         $('[data-toggle="tooltip"]').tooltip()
+//         $('[data-toggle="popover"]').popover()
+//     })
+// })
