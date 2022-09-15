@@ -1,4 +1,4 @@
-<h1><%= @album.name %> Photos<h1>
+<h1><%= @album.name %> Photos</h1>
 <%= link_to "Upload Photo", new_album_photo_path(@album), class: "btn btn-info" %>
 <div class="row">
   <%= render(partial: "list", locals: {photos: @photos}) %>

@@ -1,7 +1,8 @@
 <% photos.each do |photo| %>
   <div class="col-3">
     <%= link_to album_photo_path(photo.album_id, photo) do %>
-      <%= image_tag photo.image.url, alt: photo.name, class: "img-fluid", title: photo.name %>
+      <%= image_tag(photo.image.url, alt: photo.name, class: "img-fluid", title: photo.name) if photo.image.present? %>
+      <%= image_tag(photo.images.first.url, alt: photo.name, class: "img-fluid", title: photo.name) if !photo.image.present? && photo.images.present? %>
     <% end %>
   </div>
 <% end %>
