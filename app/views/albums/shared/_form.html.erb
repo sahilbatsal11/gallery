@@ -26,6 +26,10 @@
         <div id="album_description" class="form-text">What type of album and photoes it contains.</div>
     <% end %>
   </div>
+  <div class="mb-3">
+    <%= f.label :image, "Album Thumbnail", class: "form-label" %>
+    <%= f.file_field :image, class: "form-control", readonly: !is_editable, accept: "image/*" %>
+  </div>
   <% if is_editable %>
     <div class="mb-3">
         <%= f.submit "Create Album", class: "btn btn-primary float-end" %>

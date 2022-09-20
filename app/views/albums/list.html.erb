@@ -1,36 +1,16 @@
-<div class="container">
-  <table class="table" id="album_list">
-    <thead>
-      <tr>
-        <td colspan="3"></td>
-        <td>
-          <%#= link_to 'New Album', new_album_path, class: "float-end btn btn-primary" %>
-          <%# <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newAlbumModal">
-            New Album
-          </button> %>
-          <%#= link_to 'New Album', new_album_path, class: "float-end btn btn-primary", data: {"bs-toggle": "modal", "bs-target": "#newAlbumModal"}, remote: true %>
-          <%= link_to 'New Album', new_album_path, class: "float-end btn btn-primary", remote: true %>
-        </td>
-      </tr>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @albums.each do |album| %>
-        <%= render(partial: "albums/shared/item", locals: {album: album}) %>
-      <% end %>
-    </tbody>
-  </table>
+<h1>Album List(<%= @albums.try(:size) || 0 %>)</h1>
+<%#= link_to 'New Album', new_album_path, class: "float-end btn btn-primary" %>
+<%# <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newAlbumModal">
+  New Album
+</button> %>
+<%#= link_to 'New Album', new_album_path, class: "float-end btn btn-primary", data: {"bs-toggle": "modal", "bs-target": "#newAlbumModal"}, remote: true %>
+<%= link_to 'New Album', new_album_path, class: "float-end btn btn-primary", remote: true %>
+<div class="row" id="album_list">
+  <% @albums.each do |album| %>
+    <%= render(partial: "albums/shared/item", locals: {album: album}) %>
+  <% end %>
 </div>
-
-
 <!-- Button trigger modal -->
-
-
 <!-- Modal -->
 <div class="modal fade" id="newAlbumModal" tabindex="-1" aria-labelledby="newAlbumModelLabel" aria-hidden="true">
   <div class="modal-dialog">

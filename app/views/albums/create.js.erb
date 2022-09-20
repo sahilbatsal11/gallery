@@ -7,5 +7,5 @@
     <% item_data = j(render(partial: "albums/shared/item", locals: {album: @album, js_request: true})) %>
     var $new_album_modal = $("#newAlbumModal");
     $new_album_modal.modal("hide");
-    $("#album_list").find("tbody").prepend("<%= item_data %>");
+    $("#album_list").prepend("<%= item_data %>");
 <% end %>

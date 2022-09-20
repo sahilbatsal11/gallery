@@ -15,8 +15,8 @@ import "channels"
 Rails.start()
 // Turbolinks.start()
 ActiveStorage.start()
-// import "bootstrap"
-require("bootstrap")
+import "bootstrap"
+// require("bootstrap")
 // document.addEventListener("ready", function() {
 //     $(function () {
 //         $('[data-toggle="tooltip"]').tooltip()

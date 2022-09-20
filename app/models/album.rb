@@ -4,6 +4,8 @@ class Album < ApplicationRecord
   validates :description, presence: true, length: { minimum: 10 }
   # /Validations End
 
+  mount_uploader :image, ImageUploader
+
   # Associations
   belongs_to :user
   has_many :photos
