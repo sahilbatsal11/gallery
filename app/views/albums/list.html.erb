@@ -1,16 +1,20 @@
+<%= stylesheet_link_tag 'albums', media: 'all' %>
 <h1>Album List(<%= @albums.try(:size) || 0 %>)</h1>
 <%#= link_to 'New Album', new_album_path, class: "float-end btn btn-primary" %>
 <%# <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newAlbumModal">
   New Album
 </button> %>
 <%#= link_to 'New Album', new_album_path, class: "float-end btn btn-primary", data: {"bs-toggle": "modal", "bs-target": "#newAlbumModal"}, remote: true %>
-<%= link_to 'New Album', new_album_path, class: "float-end btn btn-primary", remote: true %>
+<div class="row">
+  <%= link_to 'New Album', new_album_path, class: "float-end btn btn-primary", remote: true %>
+  <!-- Button trigger modal -->
+</div>
 <div class="row" id="album_list">
   <% @albums.each do |album| %>
     <%= render(partial: "albums/shared/item", locals: {album: album}) %>
   <% end %>
 </div>
-<!-- Button trigger modal -->
+
 <!-- Modal -->
 <div class="modal fade" id="newAlbumModal" tabindex="-1" aria-labelledby="newAlbumModelLabel" aria-hidden="true">
   <div class="modal-dialog">
