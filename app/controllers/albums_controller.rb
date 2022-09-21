@@ -30,6 +30,11 @@ class AlbumsController < ApplicationController
   end
 
   def edit
+    @album = Album.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show
@@ -37,9 +42,15 @@ class AlbumsController < ApplicationController
 
   def update
     if @album.update(album_params)
-      redirect_to @album, notice: "Updated Successfully"
+      respond_to do |format|
+        format.html { redirect_to @album, notice: "Update Successfully" }
+        format.js
+      end
     else
-      render :edit
+      respond_to do |format|
+        format.html { render :edit , alert: "Failed to update" }
+        format.js
+      end
     end
   end
 

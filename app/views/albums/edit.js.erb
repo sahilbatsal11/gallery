@@ -1,0 +1,4 @@
+<% form_data = j(render(partial: "albums/shared/form", locals: {album: @album, js_request: true})) %>
+var $new_album_modal = $("#newAlbumModal");
+$new_album_modal.find(".modal-body").html("<%= form_data %>");
+$new_album_modal.modal("show");

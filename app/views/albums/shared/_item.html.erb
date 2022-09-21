@@ -5,7 +5,7 @@
         <h5 class="card-title"><%= album.name %></h5>
         <p class="card-text"><%= album.description.to_s[0..100] %><%= album.description.to_s.length > 100 ? "..." : ""%></p>
         <%= link_to 'Show', album_path(album), class: "btn btn-success" %>
-        <%= link_to 'Edit', edit_album_path(album), class: "btn btn-info" %>
+        <%= link_to 'Edit', edit_album_path(album), class: "btn btn-info", remote: true %>
         <%= link_to 'Delete', album_path(album), method: :delete, data: { confirm: "Are you Sure?" }, class: "btn btn-danger" %>
     </div>
     </div>
