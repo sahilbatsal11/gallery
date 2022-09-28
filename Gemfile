@@ -48,7 +48,10 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver', '>= 4.0.0.rc1'
-  # Easy installation and use of web drivers to run system tests with browsers
+# Easy installation and use of web drivers to run system tests with browsers
+  gem "factory_bot_rails"
+  gem 'rspec-rails'
+  gem 'faker'
   gem 'webdrivers'
 end
 
@@ -60,3 +63,5 @@ gem 'devise'
 
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick', '~> 4.3'
+
+
