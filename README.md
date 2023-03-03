@@ -25,3 +25,4 @@ Things you may want to cover:
 # album
 # albums
 # gallery
+# projects
